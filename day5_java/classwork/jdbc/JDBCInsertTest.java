@@ -1,0 +1,39 @@
+package com.coforge.day5_java.classwork.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
+public class JDBCInsertTest {
+
+	public static void main(String[] args) throws Exception {
+
+		// Step-1 : Loading the driver
+		Class.forName("com.mysql.cj.jdbc.Driver");
+
+		// Step-2 : Connecting with DB
+		Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydatabase", "root",
+				"Neeraj@6637");
+
+		// Step-3 : create statement
+		String sql = "insert into tbl_employee values( ?, ?, ?, ?)";
+		PreparedStatement statement = connection.prepareStatement(sql);
+
+		statement.setInt(1, 109);
+		statement.setString(2, "Ram");
+		statement.setInt(3, 1000);
+		statement.setInt(4, 10);
+
+		// Step-4 : Executing the query
+		int n = statement.executeUpdate(); // executeUpdate is used to insert, update, delete;
+		if (n == 1) {
+			System.out.println("Employee details saved");
+		} else {
+			System.out.println("Employee details not saved");
+		}
+
+		// Step-5 : Closing connection
+		statement.close();
+		connection.close();
+	}
+}
