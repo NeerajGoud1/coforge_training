@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script>
+function add(a = 10, b = 20){
+	console.log(a + b);
+}
+
+function restArgs(a , b, ...args){
+	console.log(a + b);
+	let total = 0;
+	
+	for(let n of args){
+		total += n;
+	}
+	console.log(total);
+}
+
+
+function deconstructing(){
+
+ let person = {
+	firstName : "Neeraj",
+	lastName : "Kumar"
+ }
+ 
+ let {firstName : fName} = person;
+ 
+ console.log(fName);
+ 
+}
+
+const addWithArrow = (a, b) => a + b;
+
+
+</script>
+</head>
+<body>
+
+	<button onclick="add()">add()</button>
+	<button onclick="add(100)">add(100)</button>
+	<button onclick="add(100, 200)">add(100, 200)</button>
+</body>
+</html>

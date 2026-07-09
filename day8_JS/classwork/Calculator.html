@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script>
+function calculate(operator){
+	
+	var n1 = parseInt(document.getElementById("n1").value);
+	var n2 = parseInt(document.getElementById("n2").value);
+	var result = "";
+	
+	if(operator == "add")
+		result = "Addition : " + (n1 + n2);
+	if(operator == "sub")
+		result = "Subtraction : " + (n1 - n2);
+	if(operator == "mul")
+		result = "Multiplicaton : " + (n1 * n2);
+	if(operator == "adivdd")
+		result = "Division : " + (n1 / n2);
+	
+	document.getElementById("ResultDiv").innerHTML = "<b>" + result + "<b>";
+	
+}
+
+</script>
+</head>
+<body>
+	Enter No1 :
+	<input type="number" id="n1" /> 
+	Enter No2 :
+	<input type="number" id="n2" />
+	<br />
+	<button onclick="calculate('add')">Addition</button>
+	<button onclick="calculate('sub')">Subtraction</button>
+	<button onclick="calculate('mul')">Multiplication</button>
+	<button onclick="calculate('div')">Division</button>
+	<div id="ResultDiv"></div>
+</body>
+</html>
