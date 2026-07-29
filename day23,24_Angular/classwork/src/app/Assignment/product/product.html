@@ -1,0 +1,31 @@
+<!-- <h1>Product Catalog</h1>
+<img [src]="image" /><br>
+Product Name : {{productName}}
+<br>Product Price : {{price}}
+<br>Product Category : {{category}}
+<br>Product Brand : {{brand}}
+<br>Product Availability : {{availability}} -->
+
+
+<h2>Product Catalog</h2>
+
+<table border="1" >
+
+    <tr>
+        <th>SNO</th>
+        <th>Product Id</th>
+        <th>Product Name</th>
+        <th>Category</th>
+        <th>Price</th>
+    </tr>
+
+<tr *ngFor="let product of products; let i = index" 
+    [ngClass]="i % 2 === 0 ? 'even-row' : 'odd-row'">
+<td>{{ i + 1 }}</td>
+  <td>{{ product.id }}</td>
+  <td>{{ product.name }}</td>
+  <td>{{ product.category }}</td>
+  <td>{{ product.price }}</td>
+</tr>
+
+</table>

@@ -1,0 +1,6 @@
+<h1>Addition Component</h1><br>
+<b> form Interaction using 2 way data binding</b>
+<br><input type="number" [(ngModel)]="num1" placeholder="Enter first number">
+<input type="number" [(ngModel)]="num2" placeholder="Enter second number">
+<button (click)="getAddition()">Add</button>
+<p>Result : {{ result }}</p>

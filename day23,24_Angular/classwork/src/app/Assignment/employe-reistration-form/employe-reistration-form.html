@@ -1,0 +1,19 @@
+<h1>Employee Registration Form</h1>
+
+<!-- The form only calls saveEmployee if employeeForm.valid is true -->
+<form #employeeForm="ngForm" (ngSubmit)="employeeForm.valid && saveEmployee(employeeForm.value)">
+  <br> Employee Id : <input type="text" name="employeeId" [(ngModel)]="employeeId" required />
+  <br> Employee Name : <input type="text" name="employeeName" [(ngModel)]="employeeName" required />
+  <br> Employee Email : <input type="email" name="employeeEmail" [(ngModel)]="employeeEmail" required email />
+  <br> Mobile Number : <input type="text" name="employeeMobile" [(ngModel)]="employeeMobile" required pattern="^[0-9]{10}$" />
+  <br> Department : <input type="text" name="employeeDepartment" [(ngModel)]="employeeDepartment" required />
+  <br> Gender :
+  <input type="radio" name="gender" value="Male" [(ngModel)]="employeeGender" required /> Male
+  <input type="radio" name="gender" value="Female" [(ngModel)]="employeeGender" required /> Female 
+  <br> Date of Joining : <input type="date" name="employeeJoiningDate" [(ngModel)]="employeeJoiningDate" required />
+  <br> Salary : <input type="number" name="employeeSalary" [(ngModel)]="employeeSalary" required min="1" />
+  
+  <br><br>
+
+  <button type="submit">Register Employee</button>
+</form>

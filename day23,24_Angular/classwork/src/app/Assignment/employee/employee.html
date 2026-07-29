@@ -1,0 +1,28 @@
+<!-- <h1>Employee Profile</h1>
+EmployeeId : {{employeeId}}<br>
+Name : {{name}}<br>
+Salary : {{salary}}<br>
+Department : {{department}}<br> -->
+
+<h2>Employee Dashboard</h2>
+
+<button (click)="toggleEmployee()">
+    {{ showEmployee ? 'Hide Employee' : 'Show Employee' }}
+</button>
+
+<hr>
+
+<div *ngIf="showEmployee">
+
+    <p><b>Employee ID :</b> {{ employee.id }}</p>
+
+    <p><b>Name :</b> {{ employee.name }}</p>
+
+    <p><b>Department :</b> {{ employee.department }}</p>
+
+    <p><b>Salary :</b> {{ employee.salary }}</p>
+
+</div>
+ 
+
+<h3 *ngIf="!showEmployee">No Employee Found</h3>

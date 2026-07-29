@@ -1,0 +1,65 @@
+<h1 class="MyHeading">Welcome to My Angular App</h1>
+<app-my-child1></app-my-child1>
+<b>Angular one way data binding - Interpolation (this can be applied for plain text and also html attribute for value) </b>
+<br> <b [ngStyle]="myStyle">Name : {{name}}</b> <!--Interpolation starting with {{ and ending with }} is used to bind the data from the component class to the template. It allows you to display dynamic values in the HTML template. In this case, it binds the value of the name property from the App component class to be displayed in the template.-->
+<br> <b [ngClass]="myClass">Name : {{name}}</b>
+<br> Age : {{age}}
+<br> Email : {{email}} 
+<br> Email : <input type="text" value={{email}} /> 
+<br><b>Addition :  {{getAddition(5, 10)}}</b>
+<br><img src={{imagePath}}  width={{widht}} height={{height}}/>
+<br><br>
+<b>Angular one way data binding - Property Binding (this is only for html attribute for key) </b>    
+<br> Email : <input type="text" [value]="email" /> 
+<br><img [src]="imagePath"  [width]=widht [height]="height"/>
+<br><button (click)="changeName()">Change Name</button> <!-- This button changes the name property -->
+<br><button (click)="ZoomInOut()">ZoomInOut</button>
+
+<br>
+Enter Your First Name : <input type="text" [(ngModel)]="firstName" /> <!-- This is two way data binding. It binds the value of the input field to the firstName property in the component class and also updates the input field when the firstName property changes. -->
+<br>Welcome {{firstName}} <!-- This displays the value of the firstName property in the template. -->
+
+
+<!-- 
+
+<h1>Assignment</h1>
+<app-employee></app-employee>
+<app-student></app-student>
+<app-product></app-product>
+<app-company-dashboard></app-company-dashboard>
+<app-event-registration-form></app-event-registration-form>
+<app-counter></app-counter> -->
+
+<!-- <h1>Day 2</h1> -->
+<!-- <app-structural-directives></app-structural-directives> -->
+
+<!-- <app-addition></app-addition>
+<app-subtraction></app-subtraction>
+
+
+<h1>Assignment 2</h1>
+<app-employee></app-employee>
+<app-product></app-product>
+<app-student></app-student>
+
+
+<app-employe-reistration-form></app-employe-reistration-form> -->
+
+<!-- 
+<app-structural-directives></app-structural-directives> 
+ -->
+
+<div class="myDiv">
+<table width="100%" [cellSpacing]="15" [cellPadding]="10">
+<tr>
+<td><a routerLink="Home">Home</a></td>
+<td><a routerLink="Contact">Contact</a></td>
+<td><a routerLink="About">About</a></td>
+</tr>
+</table>
+<hr/>
+<div>
+   This is the space for New Component.
+   <router-outlet></router-outlet>
+</div>
+</div>

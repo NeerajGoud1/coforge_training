@@ -1,0 +1,16 @@
+/* Summary Cards Layout */
+
+
+
+
+
+
+.pass {
+  background-color: #28a745;
+  color: white;
+}
+
+.fail {
+  background-color: #dc3545;
+  color: white;
+}

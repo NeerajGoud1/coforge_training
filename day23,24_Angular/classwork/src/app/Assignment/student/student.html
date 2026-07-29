@@ -1,0 +1,45 @@
+<!-- <h1>Student Information System</h1>
+<img [src]="imagePath"  [width]=widht [height]="height"/>
+<br>Student Name: <span [textContent]="name"></span>
+<br>Course: <span [textContent]="course"></span>
+<br>College: <span [textContent]="college"></span> -->
+
+<h2>Student Results</h2>
+
+<table border="1" class="result-table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Student ID</th>
+      <th>Name</th>
+      <th>Marks</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of students; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ student.id }}</td>
+      <td>{{ student.name }}</td>
+      <td>{{ student.marks }}</td>
+      <td>
+  <span *ngIf="student.marks >= 35" [ngClass]="'pass'">Pass</span>
+   <span *ngIf="student.marks < 35" [ngClass]="'fail'">Fail</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+  <div >
+    <h3>Total Students</h3>
+    <p>{{ totalStudents }}</p>
+  </div>
+  <div>
+    <h3>Passed</h3>
+    <p>{{ passCount }}</p>
+  </div>
+  <div>
+    <h3>Failed</h3>
+    <p>{{ failCount }}</p>
+  </div>
